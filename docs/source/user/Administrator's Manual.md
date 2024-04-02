@@ -1,27 +1,30 @@
 # Administrator’s Manual
 
-#### Altibase 7.1
+**Altibase 7.1**
 
 Altibase® Administration
 
-<pre>
-Altibase Administration Administrator’s Manual
-Release 7.1
-Copyright ⓒ 2001~2023 Altibase Corp. All Rights Reserved.<br>
-This manual contains proprietary information of Altibase® Corporation; it is provided under a license agreement containing restrictions on use and disclosure and is also protected by copyright patent and other intellectual property law. Reverse engineering of the
-software is prohibited.<br>
-All trademarks, registered or otherwise, are the property of their respective owners.<br>
-<b>Altibase Corp</b>
-10F, Daerung PostTower II,
-306, Digital-ro, Guro-gu, Seoul 08378, Korea
+Altibase Administration Administrator’s Manual Release 7.1
+Copyright ⓒ 2001~2023 Altibase Corp. All Rights Reserved.
+
+This manual contains proprietary information of Altibase® Corporation; it is provided under a license agreement containing restrictions on use and disclosure and is also protected by copyright patent and other intellectual property law. Reverse engineering of the software is prohibited.
+
+All trademarks, registered or otherwise, are the property of their respective owners.
+
+Altibase Corp
+
+10F, Daerung PostTower II, 306, Digital-ro, Guro-gu, Seoul 08378, Korea
+
 Telephone : +82-2-2082-1000 
+
 Fax       : +82-2-2082-1099
-Customer Service Portal : <a href='http://support.altibase.com/en/'>http://support.altibase.com/en/</a>
-Homepage                : <a href='http://www.altibase.com'>http://www.altibase.com</a></pre>
-<br>
+
+Customer Service Portal : http://support.altibase.com/en/
+
+Homepage :  http://www.altibase.com
+
 
 ## Table Of Contents
-
 - [Preface](#preface)
 - [1. Introduction](#1-Introduction)
   - [Hybrid DBMS Concept](#hybrid-dbms-concept)
@@ -111,18 +114,15 @@ Homepage                : <a href='http://www.altibase.com'>http://www.altibase.
 - [Appendix B. Altibase Limitations](#appendix-b-altibase-limitations)
   - [Maximum Altibase Values](#maximum-altibase-values)
 
-
-
 ## Preface
 
-- ### About This Manual
+### About This Manual
 
-  This manual explains the concepts, components, and basic use of Altibase.
+This manual explains the concepts, components, and basic use of Altibase.
 
-  #### Audience
+#### Audience
 
-  This manual has been prepared for the following Altibase users:
-
+This manual has been prepared for the following Altibase users:
   - Database managers
   - Performance managers
   - Database users
@@ -136,16 +136,14 @@ It is recommended for those reading this manual possess the following background
 - Computer programming experience
 - Experience in database server management, operating system management, or network administration
 
-
-
 #### Organization
 
 This manual has been organized as follows:
 
--   Chapter 1: Introduction  
+-   Chapter 1: Introduction 
     This chapter introduces the concepts, features, and architecture of the Altibase server.
     
--   Chapter 2: Altibase Components  
+-   Chapter 2: Altibase Components 
     This chapter describes the components of the executable binaries and programming libraries that make up Altibase.
     
 -   Chapter 3: Creating a Database
@@ -154,13 +152,13 @@ This manual has been organized as follows:
 -   Chapter 4: Altibase Startup and Shutdown
     This chapter describes how to startup and shutdown Altibase, and explains what to do internally during Altibase multi-state startup.
     
--   Chapter 5: Database Objects and Privileges  
+-   Chapter 5: Database Objects and Privileges 
     This chapter describes Altibase objects and privileges such as constraints, indexes, sequences, replication, tables, and users. This chapter also describes the privileges of the system and schema object levels.
     
--   Chapter 6: Managing Tablespaces  
+-   Chapter 6: Managing Tablespaces 
     This chapter describes how to manage the database's logical structure in small units and manage the physical data space more efficiently. 
     
--   Chapter 7: Partitioned Objects  
+-   Chapter 7: Partitioned Objects 
     This chapter describes partitioned tables. Partitioned tables are managed by breaking a large database table into smaller tables.
     
 -   Chapter 8: Managing Transactions
@@ -284,7 +282,6 @@ If you need immediate assistance regarding any errors, omissions, and other tech
 Thank you. We always welcome your feedback and suggestions.
 
 ## 1. Introduction
-
 -------------
 
 This chapter describes the background of the emergence of Hybrid DBMS. It also describes the structure and features of Altibase.
@@ -343,7 +340,7 @@ Nevertheless, search operations are faster using an MMDBMS because data access i
 
 Despite the advantages of high and consistent performance, because MMDBMS must save data in memory, they encounter a limitation when data processing requirements are a large volume and store more than hundreds of GB of data.
 
-##### **Combining MMDBMS and DRDBMS**
+##### Combining MMDBMS and DRDBMS
 
 To overcome these problems, the most commonly solution is to divide and store the data separately. The data that needs high performance is stored in the MMDBMS, and the data that needs large capacity is stored in the DRDBMS.
 
@@ -363,9 +360,12 @@ To summarize, the Hybrid DBMS combines the advantages of the MMDBMS, which is op
 
 In other words, hybrid DBMS is capable of high-performance information processing by efficient use of time, and large-scale information processing by efficient resource utilization.  Hybrid DBMS can now be adopted in all fields, including those requiring both high performance and the processing of large amounts of data.
 
-![](media/Admin/capacity.jpg)
+```{figure} media/Admin/capacity.jpg
+:width: 720px
+:align: center
 
 [Figure 1-1] The Structure of a High Performance / Large capacity DBMS
+```
 
 ### Altibase Features
 
@@ -405,7 +405,7 @@ Unlike other real-time database systems, Altibase supports a wide range of indus
 
 Because Altibase supports ODBC, JDBC, and C/C++ Precompiler, it can be used without converting the existing database application in order to use them with Altibase Hybrid MMDBMS
 
-#### **Multi-Version Concurrency Control**
+#### Multi-Version Concurrency Control
 
 Altibase manages concurrency using the MVCC (Multi-Version Concurrency Control). MVCC is a technique of achieving maximum performance by eliminating collisions when reading and writing operations are performed on multiple versions of a single data item. 
 
@@ -417,7 +417,7 @@ Altibase provides MVCC in different ways for its memory table and disk tables in
 
 The Altibase Hybrid DBMS architecture provides various features to achieve maximum performance. First, the number of transactions that can be simultaneously executed in the database can be controlled by configuring the properties in the altibase.properties file. Additionally, for efficient server operation, AUTOCOMMIT mode can be used. Furthermore, Altibase provides the following transaction isolation levels: “read committed” (0), “repeatable read” (1), and “no phantom read” (2), which can be selected appropriately depending on the user’s requirements.
 
-#### **Logging**
+#### Logging
 
 For database stability and durability, Altibase logs to the contents of the changed database. In addition, the optimal log is created to maximize the performance of replication between systems.
 
@@ -471,7 +471,7 @@ When the client application and Altibase are on different systems, TCP/IP, which
 
 For more detailed information on server and client communication, please refer to ‘Server/Client Communication’.
 
-#### **Database Space**
+#### Database Space
 
 Altibase database consists of all of the data in the database stored in one or more tablespaces. The tablespaces are divided into memory tablespaces and disk tablespaces. 
 
@@ -507,15 +507,18 @@ This section describes the Altibase internal server processing structure and dat
 
 The following figure shows a client-server system composed of Altibase and an application. The Altibase server component is displayed in a layered architecture to show the path in which client requests and data are processed. Other components are drivers and libraries for accessing applications and databases. 
 
-![](media/Admin/5b4f61bb20483a11698ec2dbf7600cfb.png)
+```{figure} media/Admin/5b4f61bb20483a11698ec2dbf7600cfb.png
+:width: 720px
+:align: center
 
 [Figure 1-2] The Structure of the Altibase Server
+```
 
-#### **Internal Structure of Server Process**
+#### Internal Structure of Server Process
 
 The internal structure of an Altibase server process consists of the main thread, the dispatcher, the load balancer, the service thread pool, the service thread, the checkpoint thread, the garbage collection thread, the log flush thread, the buffer flush thread, and the archivelog thread. Each thread performs the function described below:
 
-##### **Main Thread**
+##### Main Thread
 
 The main thread creates/shuts down all threads and manage created threads.
 
@@ -532,6 +535,7 @@ The load balancer detects the overload of each services, add or remove service t
 Altibase creates and manages service threads for query processing and pools them in the Service Thread Pool. The number of service threads that are created corresponds to the user config- uration at the time the server was started.
 
 **Service Thread**
+
 The service thread processes queries and returns the result to the client. When the Altibase server starts up, Altibase creates and stores as many service threads in the service thread pool as specified in the configuration (altibase.properties) information. 
 
 **Checkpoint Thread**
@@ -557,9 +561,12 @@ If all of the memory in the buffer pool is in use, disk I/O becomes inevitable a
 **Archivelog Thread**
 The Archievelog thread regularly copies online log files to a predefined destination for use in recovery from storage media errors. The destination path is specified in the ARCHIVE_DIR property in the altibase.properties file. This feature works only when the database is in archive log mode.
 
-![](media/Admin/e0a04eaf1f4da9dacb622bb4d8d6ef19.png)
+```{figure} media/Admin/e0a04eaf1f4da9dacb622bb4d8d6ef19.png
+:width: 720px
+:align: center
 
 [Figure 1-3] Internal Structure of an Altibase Server Process
+```
 
 #### Physical Database Structure
 
@@ -601,9 +608,12 @@ A database logically consists of one or more storage units known as tablespaces.
 
 The following figure describes the relationship between tablespaces and data files.
 
-![](media/Admin/1-4.png)
+```{figure} media/Admin/1-4.png
+:width: 720px
+:align: center
 
 [Figure 1-4] The Logical Structure of a Database
+```
 
 Altibase allocates tablespaces – logical database areas – to all of the data in a database. The units of allocation of physical database space are pages, extents and segments.
 
@@ -628,7 +638,6 @@ This file is the Altibase server environment configuration file, and contains al
 This file contains error messages related to the data storage management module, the query processor module, and the Altibase server main module, as well as those related to function execution and data type.
 
 ## 2. Altibase Components
-
 -----------------
 
 This chapter describes the major components of Altibase. After installing the Altibase package, the user can check out components such as the binary section and the programming library section.
@@ -984,7 +993,9 @@ Altibase database consists of several kinds of tablespaces. Tablespaces are clas
 
 By default, when the user runs the CREATE DATABASE statement, checkpoint images and data files are created in the $ALTIBASE_HOME/dbs directory.
 
-> Note: *There is no limit on the filename extension or location of files specified when users create a tablespace.*
+```{note}: 
+There is no limit on the filename extension or location of files specified when users create a tablespace.
+```
 
 Altibase supports the following types of tablespaces:
 
@@ -1079,7 +1090,7 @@ Command execute success.
 
    In this final phase, the database is ready to provide the service to the user.
 
-#### **Creating a Database**
+#### Creating a Database
 
 In the Process phase, use the CREATE DATABASE command to create a database as shown below. 
 
@@ -1101,7 +1112,7 @@ DB Writing Completed. All Done.
 Create success.
 ```
 
-#### **Shutting Down a Database Server after Database Creation**
+#### Shutting Down a Database Server after Database Creation
 
 Once a database has been created, the server process that was started for that purpose can be shut down, or can proceed to the service phase. To shut down the server, use the shutdown command with the abort option, as follows:
 
@@ -1114,7 +1125,7 @@ Once the server has been shut down, iSQL is disconnected from the Altibase serve
 
 In addition to “abort”, the shutdown command can also be used with the “immediate” and “normal” options, but only when the server is running in the service phase.
 
-#### **Database Initialization Properties**
+#### Database Initialization Properties
 
 When a database is created using the CREATE DATABASE statement, any properties that are not specified in the CREATE DATABASE statement are set depending on the settings made in the altibase.properties file, which is located in the $ALTIBASE_HOME/conf/ directory. The relevant properties are listed below. In the table, a question mark (“?”) indicates the path specified using the ALTIBASE_HOME environment variable.
 
@@ -1185,9 +1196,9 @@ ISQL_CONNECTION = TCP, SERVER = 127.0.0.1, PORT_NO = 20300
 iSQL(sysdba)>
 ```
 
-> Note: The Altibase startup command can only be executed using the account with which Altibase (including iSQL)
-was installed.
->
+```{note}
+The Altibase startup command can only be executed using the account with which Altibase (including iSQL) was installed.
+```
 
 During the startup procedure, the status of the Altibase progress in sequence through the following phases:
 
@@ -1209,7 +1220,9 @@ STARTUP [PROCESS | CONTROL | META | SERVICE];
 
 Users other than the SYS user can access the database only in the SERVICE phase.
 
-> Note: *Altibase can only progress from earlier phases to subsequent phases; it is impossible to revert to a previous phase.*
+```{note}
+Altibase can only progress from earlier phases to subsequent phases; it is impossible to revert to a previous phase.
+```
 
 The following is an example of starting the server in the service phase:
 
@@ -1259,7 +1272,9 @@ SHUTDOWN [NORMAL | IMMEDIATE | ABORT];
 
 SHUTDOWN NORMAL and SHUTDOWN IMMEDIATE can only be executed while Altibase is running in the SERVICE phase, whereas SHUTDOWN ABORT can be executed in any phase.
 
-> Note: *The Altibase SHUTDOWN command can only be executed using the account with which Altibase (including iSQL) was installed.*
+```{note}
+The Altibase SHUTDOWN command can only be executed using the account with which Altibase (including iSQL) was installed.
+```
 
 ##### SHUTDOWN NORMAL
 
@@ -1485,7 +1500,7 @@ Tablespaces are broadly classified as memory tablespaces and disk tablespaces ba
 
 For more detailed information on how to manage tablespaces, please refer to "Chapter 6: Tablespaces".
 
-##### **Users**
+##### Users
 
 User accounts are necessary in order to connect to Altibase and to function as the owners of a schema. Users are created using the system, and are classified either as system users who manage the system, or as general users. General users require suitable privileges in order for them to connect to the database and perform operations on data.
 
@@ -1495,7 +1510,6 @@ A JOB is the addition of an execution schedule to a stored procedure. The stored
 
 The creation, alteration, and deletion of the JOB, and the management of the job scheduler is only enabled for the SYS user.
 
-{#tables-1}
 ### Tables
 
 Tables are the basic units of data storage in an Altibase database. They are constructed of columns and contain multiple rows. This section defines the terminology related to tables and explains the concepts and methods pertaining to table management.
@@ -1585,9 +1599,12 @@ The user can specify a column of the VARCHAR data type as either FIXED or VARIAB
 
 The following diagram shows how data are saved in columns declared as FIXED or VARIABLE. For a FIXED type column, even though the data type is VARCHAR, space in memory is pre-allocated just as for the CHAR data type, whereas for a VARIABLE type column, memory space corresponding to the actual length of the data is allocated.
 
-![](media/Admin/5694e1c61663b6ab137ecdbf3af37099.png)
+```{figure} media/Admin/5694e1c61663b6ab137ecdbf3af37099.png
+:width: 720px
+:align: center
 
-Figure 5-1 VARCHAR Column Structure
+[Figure 5-1] VARCHAR Column Structure
+```
 
 Because the “name“ column in the “item“ table was declared as VARCHAR(20) of type FIXED, even though the actual data that are inserted (“msjung“) is only 6 characters long, 20 bytes of space are allocated within the record.
 
@@ -1661,29 +1678,27 @@ As mentioned above, because it is dangerous to perform bulk UPDATE/DELETE operat
 
 The following is an example of a program authored using the C/C++ Precompiler that avoids bulk UPDATE/DELETE operations and UPDATEs records individually:
 
-<table>
-    <tr>
-    	<td>(a) using iSQL to perform a bulk update operation<br/>
-iSQL >update t1 set col1=2 where col1 > 1000;
-</td>
-        <td>(b) using APRE C/C++ Precompiler to update individual records<br/>
- .......<br/>
+```{list-table}
+:header-rows: 1
+:align: center
+
+* - (a) using iSQL to perform a bulk update operation
+  - (b) using APRE C/C++ Precompiler to update individual records
+* - iSQL >update t1 set col1=2 where col1 > 1000;
+  - .......<br/>
 EXEC SQL DECLARE update_cursor CURSOR<br/>
 FOR<br/>
-    select col1 from t1 where col1 > 1000;<br/>
-EXEC SQL  OPEN update_cursor;<br/>
+select col1 from t1 where col1 > 1000;<br/>
+EXEC SQL OPEN update_cursor;<br/>
 while (1)<br/>
 {<br/>
-    EXEC SQL FETCH update_cursor INTO :t1_col;<br/>
-   if (sqlca.sqlcode == SQL_NO_DATA) break;<br/>
-    EXEC SQL update t1 set col1=2 <br/>
+EXEC SQL FETCH update_cursor INTO :t1_col;<br/>
+if (sqlca.sqlcode == SQL_NO_DATA) break;<br/>
+EXEC SQL update t1 set col1=2<br/>
 where col1=:t1_col;<br/>
 }<br/>
-.......<br/>
-</td>
-    </tr>
-</table>
-
+.......
+```
 
 #### **Related SQL Statements**
 
@@ -1721,11 +1736,11 @@ Only one temporary table is allowed for one transaction.
 
 Temporary table data is temporary, and it is impossible to recover it from backups or system failures. Users should take appropriate action to preserve temporary table data.
 
-##### **Considerations**
+##### Considerations
 
 -   Temporary tables can only be created in volatile tablespaces.
 
-#### **Creating Tables**
+#### Creating Tables
 
 Tables can be created using the CREATE [GLOBAL] TEMPORARY TABLE statement. The ON COMMIT clause specifies the scope of data commitment. 
 
@@ -1814,9 +1829,12 @@ The following SQL statements are supported for temporary tables. For more detail
 
 A compressed table is a table that has a compressed column. If a table is created with a compressed column, the Altibase server automatically creates a dictionary table and a unique index to speed up SELECT operations. The dictionary table is the table that stores data, and a dictionary table is created for each compressed column. If data is inserted into or altered in a compressed column, the actual data is inserted into the dictionary table, whereas pointers (or OIDs) that point to the actual data are stored in compressed columns. Regardless of whether a compressed table is a memory table or a disk table, the dictionary table is generated in memory tablespace.
 
-![](media/Admin/compressed_table.gif)
+```{figure} media/Admin/compressed_table.gif
+:width: 720px
+:align: center
 
 [Figure 5-2] The Relationship between Compressed Columns and Dictionary Tables
+```
 
 A compressed column stores data in a separate table to prevent duplicate values, and this can decrease memory usage. However, memory usage can increase if there are little duplicates because additional data storage space would need to be consumed for compression.
 
@@ -2852,7 +2870,9 @@ One of three DML statements can be specified as the event that causes the trigge
 -   UPDATE  
     Specify UPDATE to tell the trigger to fire whenever data in the table are changed using an UPDATE statement. If an OF clause is present in the UPDATE trigger event, the trigger fires only if data in the columns explicitly named in the OF clause are changed.
 
-> Note: In order to maintain the integrity of the database, changes made to tables by replication will not be processed as trigger events.
+```{note}
+ In order to maintain the integrity of the database, changes made to tables by replication will not be processed as trigger events.
+```
 
 #### Creating Trigger
 
@@ -3483,9 +3503,12 @@ In addition, the user can create user-defined tablespaces (disk, memory, or vola
 
 [Figure 6-1] shows the relationship between a database and tablespaces.
 
-![](media/Admin/6-1_Eng.png)
+```{figure} media/Admin/6-1_Eng.png
+:width: 720px
+:align: center
 
-Figure 6-1 The Relationship between a database and tablespaces
+[Figure 6-1] The Relationship between a database and tablespaces
+```
 
 #### The Structure of Disk Tablespace
 
@@ -3497,17 +3520,23 @@ Disk tablespaces are closely related to data files and segments. [Figure 6-2] sh
 
 Disk tablespaces, data files, and segments have the following characteristics: A disk tablespace consists of one or more data files, which exist in the form of files supported by the operating system. A segment is stored in a tablespace logically and in a data file physically. A segment is wholly contained within a particular disk tablespace, but segments can refer to segments that are stored in other disk tablespaces.
 
-![](media/Admin/6-2_Eng.png)
+```{figure} media/Admin/6-2_Eng.png
+:width: 720px
+:align: center
 
-Figure 6-2 The Relationships between Disk Tablespaces, Data Files and Segments
+[Figure 6-2] The Relationships between Disk Tablespaces, Data Files and Segments
+```
 
 ##### Disk Tablespace Logical Structure
 
 A disk tablespace logically consists of segments, extents, and pages. The relationships between them are shown in [Figure 6-3]. 
 
-![](media/Admin/376ba23c390630d6256807c88be27432.png)
+```{figure} media/Admin/376ba23c390630d6256807c88be27432.png
+:width: 720px
+:align: center
 
-Figure 6-3 The Logical Structure of a Disk Tablespace
+[Figure 6-3] The Logical Structure of a Disk Tablespace
+```
 
 ###### Segment
 
@@ -3542,9 +3571,12 @@ The basic structure of pages, as well as how to store data in them, are describe
 
 A page has a header for storing basic information about the page, free slots (this is the only instance of the term “Free slot” in this document), and the like. Records are stored in the remaining space. A page is internally divided into 5 areas, as shown below: 
 
-![](media/Admin/6-4_Eng.png)
+```{figure} media/Admin/6-4_Eng.png
+:width: 720px
+:align: center
 
-Figure 6-4 The Structure of a Page in Disk Tablespace
+[Figure 6-4] The Structure of a Page in Disk Tablespace
+```
 
 -   Physical Header  
     This area contains information that is common to all data pages, regardless of type.
@@ -3567,9 +3599,12 @@ The records in a page are stored in free space, starting from the end of the pag
 
 The logical header of the page is saved extending toward the end of the page. Its size is variable.
 
-![](media/Admin/6-5_Eng.png)
+```{figure} media/Admin/6-5_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-5] How Records are Stored in a Page
+```
 
 #### The Structure of Memory Tablespace
 
@@ -3579,9 +3614,12 @@ A memory tablespace is a tablespace in which all data are stored in memory. The 
 
 Memory tablespaces are closely related to checkpoint image files. [Figure 6-6] shows the relationship between a memory table space, tables, and checkpoint image files. 
 
-![](media/Admin/6-6_Eng.png)
+```{figure} media/Admin/6-6_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-6] The Relationship between a Memory Tablespace , Tables and Checkpoint Image Files
+```
 
 Memory tablespaces, tables, and checkpoint image files have the following characteristics: 
 
@@ -3599,9 +3637,12 @@ When checkpointing occurs, pages in memory are stored in files of a type support
 
 The elements that logically constitute memory tablespace are page lists and pages. The relationship between these elements is shown in [Figure 6-7].
 
-![](media/Admin/8e99255387df59e9af8daea0e3e9594b.png)
+```{figure} media/Admin/8e99255387df59e9af8daea0e3e9594b.png
+:width: 720px
+:align: center
 
 [Figure 6-7] The Logical Structure of Memory Tablespace
+```
 
 ###### Page List
 
@@ -3738,9 +3779,12 @@ In Altibase, the smallest unit of database storage space management is the page.
 
 A data page is one of several kinds of pages, and stores row data. Row data are stored in free space, starting from the end of the page. If there is not enough free space, it is advisable to create larger regions of free space using compaction to turn fragmented space into contiguous space.
 
-![](media/Admin/6-8_Eng.png)
+```{figure} media/Admin/6-8_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-8] The Structure of a Data Page in Disk Tablespace
+```
 
 The data page consists of six different areas, as shown in [Figure 6-8].
 
@@ -3775,9 +3819,12 @@ PCTFREE is the minimum amount of free space, expressed as a percentage, that is 
 
 For example, if PCTFREE is set to 20, data can be inserted into the page until it is 80% full, and the remaining 20% of the page will be set aside for use in updating existing rows.
 
-![](media/Admin/6-9_Eng.png)
+```{figure} media/Admin/6-9_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-9] PCTFREE and Page Structure
+```
 
 ##### PCTUSED
 
@@ -3785,9 +3832,12 @@ PCTUSED is the threshold percentage below which the amount of used space in a pa
 
 If the amount of free space falls below the limit specified in PCTFREE, it becomes impossible to insert new records into the page, and free space in the page can only be used to update existing rows. This state persists until the percentage of used space falls below the threshold specified by PCTUSED.
 
-![](media/Admin/6-10_Eng.png)
+```{figure} media/Admin/6-10_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-10] PCTUSED and Page Structure
+```
 
 #### Row Structure
 
@@ -3795,9 +3845,12 @@ Rows can be divided into one or more pieces. If it is possible to store an entir
 
 These row pieces are "chained", that is, they are associated with each other via a common ROWID value.
 
-![](media/Admin/6-11_Eng.png)
+```{figure} media/Admin/6-11_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-11] The Structure of a Row Piece
+```
 
 A row piece consists of a row header and a row body. 
 
@@ -3907,17 +3960,23 @@ Therefore, Altibase maintains undo records pertaining to committed transactions 
 
 If there are no active transactions accessing the space containing the undo data for transactions that have been committed, the so-called "undo space" is said to have expired. Conversely, if active transactions that might need to access the undo space still exist, space is considered valid, or unexpired. Expired undo space can be reused by other transactions, whereas unexpired space cannot. 
 
-![](media/Admin/6-12_Eng.png)
+```{figure} media/Admin/6-12_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-12] Reusing Undo Spaces in an Undo Segment
+```
 
 In the above figure, it shows how the cyclical structure of undo segments allows undo space to be reused
 
 Undo spaces are used sequentially starting with undo space #0, until undo space #5 that is currently being used. Then, if undo space #0, which is the next undo space to be used, is confirmed to have expired, then when all of undo space #5 has been used up, undo space #0 is reused without requiring expansion of the undo segment.
 
-![](media/Admin/6-13_Eng.png)
+```{figure} media/Admin/6-13_Eng.png
+:width: 720px
+:align: center
 
 [Figure 6-13] Undo Segment Expansion
+```
 
 However, if undo space #0 has not expired, extents are added to the undo segment, thus creating undo space #6, as can be seen in [Figure 6-13]. 
 
@@ -4481,9 +4540,12 @@ The term "tablespace online backup" refers to backup that is conducted while the
 -   Use the ALTER DATABASE BACKUP statement to perform an online backup while the database is running. 
 -   Even if a fault causes data files to be damaged or lost, media recovery can be performed to restore data files to the current point in time. 
 
-[Figure 6-14] The Concepts of Media Recovery
+```{figure} media/Admin/6-14_Eng.png
+:width: 720px
+:align: center
 
-![](media/Admin/6-14_Eng.png)
+[Figure 6-14] The Concepts of Media Recovery
+```
 
 -   If data file xyz, which exists in a disk tablespace, is damaged, it can be restored using a data file that was previously created during a hot backup. A memory tablespace can be recovered using a checkpoint image file that was previously created during a hot backup. 
 -   On the basis of the final checkpoint SCN (140) and recovery LSN (32:010), which are written in the header of the data file that was created during the backup, the file can be restored to the current final checkpoint SCN (200). 
@@ -5509,7 +5571,9 @@ transactions do not increase the size of rows</td>
 
 [Table 6-3] Table Size Estimation based on Relative Frequency of Transactions by Type
 
-> Note: The table size estimation method shown above should not be considered a rigid standard. It is also necessary to take into account the possibility that the amount of data will suddenly increase in the event of abnormal system operation.
+```{note}
+The table size estimation method shown above should not be considered a rigid standard. It is also necessary to take into account the possibility that the amount of data will suddenly increase in the event of abnormal system operation.An admonition note!
+```
 
 ##### Consider Suitable Backup Space 
 
@@ -5519,9 +5583,12 @@ In such cases, the appropriate size of a tablespace should be set in considerati
 
 The figure below shows how tablespaces are organized in consideration of business purposes and backup strategies.
 
-![](media/Admin/image5_15.png)
+```{figure} media/Admin/image5_15.png
+:width: 720px
+:align: center
 
 [Figure 6-15] Determining Tablespace Size in Consideration of Backup Strategy
+```
 
 #### Tablespace Information
 
@@ -5558,17 +5625,23 @@ A non-partitioned object is an object that depends on one table space. A nonpart
 
 A partitioned object can be stored across multiple tablespaces. This is illustrated in [Figure 7-1].
 
-![](media/Admin/Admin_eng.1.41.1.jpg)
+```{figure} media/Admin/Admin_eng.1.41.1.jpg
+:width: 720px
+:align: center
 
 [Figure 7-1] The Relationships between Tablespaces, Partitioned Objects, and Non-Partitioned Objects
+```
 
 A partitioned object internally consists of multiple partitions. Each partition has the same constraints as nonpartitioned objects, and one partition only depends on a single tablespace.
 
 A partitioned object causes partitions distributed across multiple tablespaces to appear as a single object. [Figure 7-2] shows the internal structure of a partitioned object.
 
-![](media/Admin/Admin_eng.1.41.2.jpg)
+```{figure} media/Admin/Admin_eng.1.41.2.jpg
+:width: 720px
+:align: center
 
-[Figure 7-2] The Internal Structure of a Partitioned Object
+[Figure 7-2] The Internal Structure of a Partitioned Objec
+```
 
 ##### Advantages of Partitioned Objects
 
@@ -5616,9 +5689,12 @@ However, there are some characteristics of partitioned tables that make them dif
 - Index Range 
   Indexes can be built for partitioned tables. In contrast, indexes can be built for the individual tables that make up union views, but not for the union views themselves.
 
-![](media/Admin/Admin_eng.1.42.1.jpg)
+```{figure} (media/Admin/Admin_eng.1.42.1.jpg
+:width: 720px
+:align: center
 
 [Figure 7-3] Partitioned Tables and Non-partitioned Tables
+```
 
 A partitioned table can thus be thought of as a union view that can be accessed to update records, and for which an index can be built.
 
@@ -5645,9 +5721,12 @@ An index is classified either as a partitioned index or as a non-partitioned ind
 
 The term “non-partitioned index” refers to an index that is not partitioned, whereas the term “partitioned index” refers to a large index that, just like a partitioned table, is divided into multiple partitions according to some partitioning criteria. This is illustrated in [Figure 7-4]. 
 
-![](media/Admin/Admin_eng.1.42.2.jpg)
+```{figure} media/Admin/Admin_eng.1.42.2.jpg
+:width: 720px
+:align: center
 
 [Figure 7-4] Partitioned Indexes vs. Non-Partitioned Indexes
+```
 
 [Figure 7-4] shows a non-partitioned index that has been partitioned based on color, resulting in a partitioned index that consists of three partitions.
 
@@ -5660,9 +5739,12 @@ Partitioned indexes, which are partitioned according to some partition condition
 
 [Figure 7-5] shows the difference between a prefixed index and a non-prefixed index, using a table that consists of the “sales_id” and “sales_date” columns as an example.
 
-![](media/Admin/Admin_eng.1.42.3.jpg)
+```{figure} media/Admin/Admin_eng.1.42.3.jpg
+:width: 720px
+:align: center
 
 [Figure 7-5] Examples of Prefixed and Non-prefixed Indexes
+```
 
 In the figure above, the indexes are partitioned on the basis of the “sales_date” column. Each index is classified as either a prefixed index or a non-prefixed index based on the key on which it was built. 
 
@@ -5670,9 +5752,12 @@ In the figure, the prefixed index has the key “sales_date”. In other words, 
 
 The reason for distinguishing between prefixed and non-prefixed indexes is related to the UNIQUE attribute. Because the index key of a prefixed index is the same as its index partition key, the Altibase server can perform unique checks without searching all partitions in the partitioned index. However, in the case of non-prefixed indexes, the Altibase server must search all partitions included in the partitioned index. [Figure 7-6] displays an example of this: 
 
-![](media/Admin/Admin_eng.1.42.4.jpg)
+```{figure} media/Admin/Admin_eng.1.42.4.jpg
+:width: 720px
+:align: center
 
 [Figure 7-6] Example of Unique Check with Non-Prefixed Index (Impossible)
+```
 
 In the example shown in [Figure 7-6], suppose that the index partition key of the table is the sales_date column, and that duplicate values are not allowed for the sales_id column. If a non-prefixed index (“IDX_NON_PREFIX”) is built using the sales_id column as the index key, consider whether a unique check can be performed using IDX_NON_PREFIX when records are inserted using the following SQL statement: 
 
@@ -5685,9 +5770,13 @@ Because the value in the sales_date column of the record to be inserted is “Ja
 ##### Global Index and Local Index
 
 An index is classified as either a global index or a local index based on the relationship between a table partition key and an index partition key. The term “global index” refers to an index in which the index partition key and the table partition key are different (index_partition_key != table_partition_key), whereas the term “local index” refers to an index in which the index partition key and the table partition key are the same (index_partition_key == table_partition_key).
-![](media/Admin/Admin_eng.1.42.5.jpg)
+
+```{figure} media/Admin/Admin_eng.1.42.5.jpg
+:width: 720px
+:align: center
 
 [Figure 7-7] Examples of Local and Global Indexes
+```
 
 [Figure 7-7] shows the difference between a global index and a local index with reference by way of example to a table that consists of the sales_id and sales_date columns. In the figure, the indexes are sorted by sales_date, and each index is categorized as either a local or global index based on which index partition key is used to partition it. 
 
@@ -5707,17 +5796,24 @@ Global non-partitioned indexes operate similarly to non-partitioned indexes. The
 
 The following figure shows the creation of a global non-partitioned index without specifying an index partition key on the table tbl_sales, which is divided into three partitions.
 
-![](media/Admin/Admin_eng.1.42.6.jpg)
 
-Figure 7-8 Example of a global non-partitioned index
+```{figure} media/Admin/Admin_eng.1.42.6.jpg
+:width: 720px
+:align: center
+
+[Figure 7-8] Example of a global non-partitioned index
+```
 
 ##### Types of Indexes
 
 [Figure 7-9] shows the types of indexes that have been examined so far:
 
-![](media/Admin/cdba9650f1626e7cc409038702eb8b1d.png)
+```{figure} media/Admin/cdba9650f1626e7cc409038702eb8b1d.png
+:width: 720px
+:align: center
 
-[Figure 7-9] Types of Indexes
+[Figure 7-9] Types of Indexe
+```
 
 Altibase currently supports only local and global non-partitioned indexes. Global partitioned indexes are not supported. Please refer to the following table and figure: 
 
@@ -5789,9 +5885,12 @@ In reality, however, Altibase provides the concept of a default partition becaus
 
 [Figure 7-10] illustrates the concept of a default partition with reference by way of example to a partitioned object having three partitions. In the following statement, the user specifies partition conditions (partition_condition1 and partition_condition2) for partitions P1 and P2, and declares P3 as a default partition. Therefore, if a record to be inserted into this object satisfies neither partition_condition1 nor partition_condition2, it will be inserted into partition P3. In other words, the default partition is equivalent to the portion of the domain of a partition key column that remains after the domains satisfying the user-specified partition conditions have been subtracted from the entire domain.
 
-![](media/Admin/Admin_eng.1.43.1.jpg)
+```{figure} media/Admin/Admin_eng.1.43.1.jpg
+:width: 720px
+:align: center
 
 [Figure 7-10] Default Partition Example
+```
 
 The default partition must be specified when a partitioned object is created. If no default partition is specified, the attempt to create the partitioned object will fail.
 
@@ -5847,9 +5946,12 @@ In the example above, the part_table table is created and range-partitioned into
 
 [Figure 7-11] shows the above example in graphical form:
 
-![](media/Admin/7-11.png)
+```{figure} media/Admin/7-11.png
+:width: 720px
+:align: center
 
 [Figure 7-11] Partition Areas of a Range-Partitioned Table
+```
 
 ##### Multi-Column Partitioning
 
@@ -5857,9 +5959,12 @@ Multi-column partitioning is a method of partitioning an object using a partitio
 
 The following figure depicts a partition key constructed on the basis of two columns (i1, i2) in one dimension. 
 
-![](media/Admin/Admin_eng.1.44.2.jpg)
+```{figure} media/Admin/Admin_eng.1.44.2.jpg
+:width: 720px
+:align: center
 
 [Figure 7-12] Partition Areas in Multi-Column Partitioning
+```
 
 The following describes multi-column partitioning with reference to a SQL statement as an example:
 
@@ -5883,9 +5988,12 @@ PARTITION BY RANGE(sales_date, sales_id)
 
 The above CREATE TABLE statement is illustrated below:
 
-![](media/Admin/Admin_eng.1.44.3.jpg)
+```{figure} media/Admin/Admin_eng.1.44.3.jpg
+:width: 720px
+:align: center
 
-[Figure 7-13] Partition Areas in Example SQL Statement
+[Figure 7-13] Partition Areas in Example SQL Statemente
+```
 
 The following table shows the partition into which records will be inserted and the insertion conditions depending on the values of the records to be inserted.
 
@@ -5930,17 +6038,23 @@ Split Partition is an operation in which a partition of a partitioned object is 
   
   Meanwhile, Out-Place Split consists of a process of creating two new partitions and inserting records into each of them. With In-Place Split, the operation that is performed on a record is a move operation, which consists of both an INSERT operation and a DELETE operation. In an MVCC environment, a DELETE operation has a more negative impact on system performance than an INSERT operation. Therefore, In-Place Split is more efficient when there is not enough storage space, whereas Out-Place Split realizes better performance in an MVCC environment when there is no shortage of storage space. 
 
-![](media/Admin/Admin_eng.1.44.4.jpg)
+```{figure} media/Admin/Admin_eng.1.44.4.jpg
+:width: 720px
+:align: center
 
 [Figure 7-14] In-place Split of a Range-Partitioned Object
+```
 
 In the example shown in the above figure, part_2, which belongs to a partitioned object that originally consists of 4 partitions, is divided into part_2 and part_4.
 
 ① The new partition, part_4, is created, after which ② records are moved from part_2 to part_4 (move: INSERT & DELETE). Finally, ③ the conditions for part_2 are narrowed to the specified conditions.
 
-![](media/Admin/Admin_eng.1.44.5.jpg)
+```{figure} media/Admin/Admin_eng.1.44.5.jpg
+:width: 720px
+:align: center
 
 [Figure 7-15] Out-place Split of a Range-Partitioned Object
+```
 
 In the example shown in the above figure, part_2, which belongs to a partitioned object that originally consists of 4 partitions, is divided into part_2 and part_4. ① The new partitions part_2 and part_4 are created, and ② records are inserted from the old part_2 into the new part_2 and part_4. Finally, ③ the old part_2 is physically deleted.
 
@@ -5950,9 +6064,12 @@ When the default partition is divided, the second partition in the INTO clause i
 
 Drop Partition is an operation in which a specific partition in a partitioned object is deleted. When a partition is deleted, all records and meta data in that partition are physically deleted. Furthermore, the conditions for that partition are incorporated in a neighboring partition.
 
-![](media/Admin/Admin_eng.1.44.6.jpg)
+```{figure} media/Admin/Admin_eng.1.44.6.jpg
+:width: 720px
+:align: center
 
-Figure 7-16 DROPping a Partition from a Range-Partitioned Object
+[Figure 7-16] DROPping a Partition from a Range-Partitioned Object
+```
 
 The figure above illustrates an example in which a partition called part_2 is dropped from a partitioned object that consists of 4 partitions.
 
@@ -5969,15 +6086,21 @@ MERGE PARTITION is an operation of merging two specified partitions among a part
 
 In-Place Merge and Out-Place Merge may differ from each other with respect to performance and efficiency. Because In-Place Merge does not create a new partition, but merely conducts an operation of INSERTing records, it is preferable to Out-place Merge from the aspect of performance.
 
-![](media/Admin/Admin_eng.1.44.7.jpg)
+```{figure} media/Admin/Admin_eng.1.44.7.jpg
+:width: 720px
+:align: center
 
 [Figure 7-17] In-Place Merge of a Range-Partitioned Object
+```
 
 In the example shown in the above figure, in a partitioned object comprising 4 partitions, the part_2 partition and the part_3 partition are merged into the original part_3 partition. ① The conditions for the existing part_3 are extended, and ② records from part_2 are inserted into part_3. Finally, ③ part_2 is physically deleted.
 
-![](media/Admin/7-18.png)
+```{figure} media/Admin/7-18.png
+:width: 720px
+:align: center
 
 [Figure 7-18] Out-Place Merge of a Range-Partitioned Object
+```
 
 In [Figure 7-18], in a partitioned object comprising 4 partitions, the part_2 partition and the part_3 partition are merged into a newly created part_3 partition.
 
@@ -6018,9 +6141,12 @@ PARTITION BY LIST(sales_city)
 
 In the example above, the part_table table is created and list-partitioned so that it has 4 partitions. The first three partitions manage data by specific cities, while the default partition, part_def, handles data that do not meet any of the conditions specified for the other partitions. The example is illustrated below:
 
-![](media/Admin/7-19.png)
+```{figure} media/Admin/7-19.png
+:width: 720px
+:align: center
 
 [Figure 7-19] Partition Area of List-Partitioned Table
+```
 
 ##### Operations on List-Partitioned Objects
 
@@ -6030,15 +6156,21 @@ There are five types of operations that can be performed on list-partitioned obj
 
 As in range partitioning, in list partitioning, the SPLIT PARTITION operation can be conducted as either In-Place Split or Out-Place Split. When splitting a partition, if the name of one of the new partitions is the same as the name of the old partition, whether In-Place Split or Out-Place Split is used depends on whether a tablespace is specified.
 
-![](media/Admin/7-20.png)
+```{figure} media/Admin/7-20.png
+:width: 720px
+:align: center
 
 [Figure 7-20] In-Place Split of a List-Partitioned Object
+```
 
 In the example shown in the above figure, in a partitioned object with 4 partitions, the part_2 partition is divided into the part_2 partition and the part_4 partition. ① A new partition, part_4, is created, and ② records are moved from part_2 to part_4 (move: INSERT & DELETE). Finally, ③ the conditions for the part_2 partition are narrowed to the newly specified conditions ({‘PUSAN’, ‘JUNJU’} -> {‘JUNJU’}). 
 
-![](media/Admin/7-21.png)
+```{figure} media/Admin/7-21.png
+:width: 720px
+:align: center
 
 [Figure 7-21] Out-Place Split of a List-Partitioned Object
+```
 
 The sample shown in the figure above illustrates partitioning part_2 into part_2 and part_4 in a partitioned object with four partitions ① The new part_2 and part_4 partitions are created, and ② records from the old part_2 partition are inserted into the new part_2 partition and the part_4 partition. Finally, ③ the old part_2 partition is physically deleted.
 
@@ -6046,9 +6178,12 @@ The sample shown in the figure above illustrates partitioning part_2 into part_2
 
 Dropping a partition from a list-partitioned object is similar to dropping one from a range-partitioned object, except that the partition conditions of the partition to be dropped are incorporated as the conditions of the default partition rather than neighboring partition. 
 
-![](media/Admin/7-22.png)
+```{figure} media/Admin/7-22.png
+:width: 720px
+:align: center
 
 [Figure 7-22] DROPping a Partition from a List-Partitioned Object
+```
 
 The example shown in the figure above illustrates dropping part_2 partition from a partitioned object with four partitions. ① The physical space (records and meta data) of the part_2 partition is dropped, and ② the conditions for part_2 are incorporated into those for the default partition part_def.
 
@@ -6056,15 +6191,21 @@ The example shown in the figure above illustrates dropping part_2 partition from
 
 As with range-partitioned objects, there are two ways to merge the partitions of a list-partitioned object: In-Place Merge and Out-Place Merge. If the name of the new partition is the same as that of one of the partitions being merged, whether In-Place Merge or Out-Place Merge is used depends on whether a tablespace is specified.
 
-![](media/Admin/7-23.png)
+```{figure} media/Admin/7-23.png
+:width: 720px
+:align: center
 
 [Figure 7-23] In-Place Merge in a List-Partitioned Object
+```
 
 The example shown in the figure above illustrates the merging of part_2 and part_3 into part_3 (old) in a partitioned object with four partitions. ① The conditions for the existing part_3 are extended, and ② records from the part_2 partition are inserted into the part_3 partition. Finally, ③ the part_2 partition is physically deleted.
 
-![](media/Admin/7-24.png)
+```{figure} media/Admin/7-24.png
+:width: 720px
+:align: center
 
 [Figure 7-24] Out-Place Merge in a List-Partitioned Object
+```
 
 The example shown in the figure above illustrates the merging of part_2 and part_3 into part_3 (new) in a partitioned object with four partitions. ① The new partition part_3 is created, and ② records from the part_2 partition and the original part_3 partition are inserted into the new part_3 partition. Finally, ③ the part_2 partition and the original part_3 partition are physically deleted
 
@@ -6105,9 +6246,12 @@ PARTITION BY HASH(sales_id)
 
 The example above shows that the table_part_table with four partitions is created using hash partitioning. Each partition manages data divided according to the hash function HASH(sales_id, 4). The above example is shown in [Figure 7-25].
 
-![](media/Admin/7-25.png)
+```{figure} media/Admin/7-25.png
+:width: 720px
+:align: center
 
 [Figure 7-25] Partition Areas of a Hash-Partitioned Table
+```
 
 ##### Operations on Hash-Partitioned Objects
 
@@ -6125,9 +6269,12 @@ There are four types of operations that can be performed on hash-partitioned obj
 
 Adding a partition to a hash-partitioned object means increasing the number of hash keys. Adding a partition affects all existing partitions. If a hash key is changed, the entire records of the table are reorganized into the new partitions. The following figure illustrates the process of adding a partition. 
 
-![](media/Admin/7-26.png)
+```{figure} media/Admin/7-26.png
+:width: 720px
+:align: center
 
 [Figure 7-26] Adding a Partition to a Hash-Partitioned Object
+```
 
 In the example shown in the above figure, the part_5 partition is added to a partitioned object that originally consists of 4 partitions. The new part_5 partition is created, and ② the records in the four existing partitions are redistributed among the four existing partitions and the newly created partition.
 
@@ -6137,9 +6284,12 @@ In the example shown in the above figure, the part_5 partition is added to a par
 
 For example, if a hash-partitioned object comprising 4 partitions (part_1, part_2, part_3 and part_4) is coalesced, it is reduced to a partitioned object comprising 3 partitions (part_1, part_2 and part_3). The following figure illustrates this process of coalescing partitions. 
 
-![](media/Admin/2d03ced8c924a0befe76d21cbd694438.png)
+```{figure} media/Admin/2d03ced8c924a0befe76d21cbd694438.png
+:width: 720px
+:align: center
 
 [Figure 7-27] Coalescing the Partitions of a Hash-Partitioned Object
+```
 
 In the example shown in the above figure, the partitions of a hash-partitioned object consisting of 4 partitions are coalesced. ① The records in the four existing partitions are redistributed among the part_1, part_2 and part_3 partitions, and ② the last partition, part_4, is deleted
 
@@ -6180,12 +6330,15 @@ PARTITION BY RANGE_USING_HASH(sales_id)
 
 The table creating statement above can be shown as figure below.
 
-![](media/Admin/7-28.png)
+```{figure} media/Admin/7-28.png
+:width: 720px
+:align: center
 
 [Figure 7-28] Partition Areas of a Hash using Range Partitioned Table
+```
 
 The operation on hash using range partitioned object is the same as range partitioned object.
- 
+
 
 ## 8. Managing Transactions
 
@@ -6408,9 +6561,13 @@ For the sake of comparison with MVCC, this section describes how an update state
 
 The following figure shows how the records in a table are changed in response to an update operation when MVCC is not being used.
 
-![](media/Admin/Admin_eng.1.48.1.jpg)
+
+```{figure} media/Admin/Admin_eng.1.48.1.jpg
+:width: 720px
+:align: center
 
 [Figure 8-1] Non-MVCC Transaction
+```
 
 In the above [Figure 8-1], (a) illustrates the state in which record A has been initially inserted into table T1. If col1 of record A is updated to the value of 2, as shown in (b) above, record A is modified in its original location without changing the amount of space allocated to T1. Similarly, DELETE operations are also performed in the original location of the record.
 
@@ -6424,9 +6581,12 @@ In out-place MVCC, which is used with memory tablespaces in Altibase, a new vers
 
 The following [Figure 8-2] shows the effect of executing an UPDATE statement when using out-place MVCC
 
-![](media/Admin/Admin_eng.1.48.2.jpg)
+```{figure} media/Admin/Admin_eng.1.48.2.jpg
+:width: 720px
+:align: center
 
 [Figure 8-2] Transaction using Out-Place MVCC
+```
 
 In the initial state, in which record A has been inserted into table T1, as shown at (a), if the value in col1 of record A in table T1 is updated to 2, an identical record is created and the value in this record is changed to 2, as shown at (b). Therefore, table T1 occupies one more slot than it did before the transaction took place
 
@@ -6444,9 +6604,12 @@ Just like an UPDATE operation, whenever a DELETE operation is executed on a reco
 
 The following figure shows how much space is used depending on whether or not new versions of each record are created when a DELETE operation is performed:
 
-![](media/Admin/Admin_eng.1.48.3.jpg)
+```{figure} media/Admin/Admin_eng.1.48.3.jpg
+:width: 720px
+:align: center
 
 [Figure 8-3] DELETE Transaction using MVCC
+```
 
 The case indicated by (a) in the above figure represents the case in which a new version is created for every record that is deleted. If a transaction deletes records A and B using a single DELETE statement, new versions will be created for each record, and thus table T1 will have two additional records.
 
@@ -6464,9 +6627,12 @@ When a record is first inserted, the system allocates space for the record in a 
 
 Assuming that version 1 is the record that was originally inserted, the following figure shows how version 1 is updated to version 2 and then to version 3.
 
-![](media/Admin/Admin_eng.1.48.4.jpg)
+```{figure} media/Admin/Admin_eng.1.48.4.jpg
+:width: 720px
+:align: center
 
 [Figure 8-4] Using MVCC with Disk Tablespaces
+```
 
 As shown in the above figure, the most recent image of a record always exists in the data tablespace. If the execution of some statement starts before version 3 is committed, it executes on the basis of the previous version, which is version 2, because it cannot read version 3. In such cases, the statement copies the image of version 3 to a buffer that it manages privately. It then reads the previous version 2 from the location indicated by the rollback RID of the record and stores this in its private buffer, where it copied version 3. If the statement cannot read version 2 either, it repeats the process and creates its own copy of version 1.
 
@@ -6549,33 +6715,45 @@ For more detailed information on these properties, please refer to the *[General
 
 **The case where a transaction does not wait until logs have been written to disk and a kernel log buffer is used: (Durability Level 3)**
 
-![](media/Admin/8-5.png)
+```{figure} media/Admin/8-5.png
+:width: 720px
+:align: center
 
 [Figure 8-5] Durability in The Case where a Transaction Does Not Wait until Logs Have Been Written to Disk and a Kernel Log Buffer Is Used:
+```
 
 Set both COMMIT_WRITE_WAIT_MODE and LOG_BUFFER_TYPE to 0 and 0. With the default Altibase durability property settings, update logs are stored in the log buffer of the OS kernel area, and transactions do not wait until their update logs have been written to the log file. 
 
 **The case where a transaction does not wait until logs have been written to disk and a memory log buffer is used: (Durability Level 2)**
 
-![](media/Admin/8-6.png)
+```{figure} media/Admin/8-6.png
+:width: 720px
+:align: center
 
 [Figure 8-6] Durability in The Case where a Transaction Does Not Wait until Logs Have Been Written to Disk and a Memory Log Buffer Is Used:
+```
 
 Set COMMIT_WRITE_WAIT_MODE and LOG_BUFFER_TYPE to 0 and 1, respectively. With this method, transactions store their update logs in a memory log buffer, and the log flush thread itself flushes the logs in the log buffer to the log file. 
 
 **The case where a transaction waits until logs have been written to disk and a kernel log buffer is used: (Durability Level 4)**
 
-![](media/Admin/8-7.png)
+```{figure} media/Admin/8-7.png
+:width: 720px
+:align: center
 
 [Figure 8-7] Durability in The Case where a Transaction Waits until Logs Have Been Written to Disk and a Kernel Log Buffer Is Used:
+```
 
 Set COMMIT_WRITE_WAIT_MODE and LOG_BUFFER_TYPE to 1 and 0, respectively. With this method, transaction update logs are stored in the log buffer of the OS kernel area, and logs for committed transactions are written directly to a log file.
 
 **The case where a transaction waits until logs have been written to disk and a memory log buffer is used: (Durability Level 5)**
 
-![](media/Admin/8-8.png)
+```{figure} media/Admin/8-8.png
+:width: 720px
+:align: center
 
 [Figure 8-8] Durability in The Case where a Transaction Waits until Logs Have Been Written to Disk and a Memory Log Buffer Is Used
+```
 
 Set COMMIT_WRITE_WAIT_MODE and LOG_BUFFER_TYPE to 1 and 1, respectively. With this method, transactions store their update logs in a memory log buffer, and logs for committed transactions are written directly to a log file, as mentioned above.
 
@@ -6631,9 +6809,12 @@ The checkpoint message for each step is written to $ALTIBASE_HOME/trc/altibase_s
 
 The following figure shows the process of threads checkpointing in the Altibase Process when checkpointing occurs.
 
-![](media/Admin/8-9.png)
+```{figure} media/Admin/8-9.png
+:width: 720px
+:align: center
 
 [Figure 8-9] The Checkpointing Process
+```
 
 #### Controlling Checkpointing
 
@@ -6699,9 +6880,12 @@ Buffer Control Blocks (BCBs) contain information about buffer frames. One BCB co
 
 The following figure and table describe the structure and information of buffer control blocks.
 
-![](media/Admin/Admin_eng.1.52.1.jpg)
+```{figure} media/Admin/Admin_eng.1.52.1.jpg
+:width: 720px
+:align: center
 
 [Figure 9-1] BCB Structure
+```
 
 | Property             | Description                                                  |
 | -------------------- | ------------------------------------------------------------ |
@@ -6728,9 +6912,13 @@ In Altibase, the LRU list is separated into hot and cold zones, and can thus be 
 
 When a page is first loaded into a buffer, it is inserted at the mid-point (LRU cold first) of the LRU list. When allocating a buffer to the new data page, if there are no free buffers in the prepare list, the end (LRU cold last) of this list is searched first, and a cold buffer is then replaced. The buffer that is replaced is called a “victim”.
 
-![](media/Admin/Admin_eng.1.52.2.jpg)
+
+```{figure} media/Admin/Admin_eng.1.52.2.jpg
+:width: 720px
+:align: center
 
 [Figure 9-2] hot-cold LRU list
+```
 
 Buffers that are read frequently are moved to the ”LRU hot first” position in the hot zone. Meanwhile, dirty buffers (buffers containing pages that have been updated but haven't been flushed to disk) are moved to the flush list. Additionally, clean buffers (buffers containing pages that haven't been updated) are designated as replacement buffers as long as they are not in the hot zone.
 
@@ -6756,9 +6944,12 @@ Dirty buffers, that is, updated buffers, are present on the checkpoint list, and
 
 [Figure 9-3 Buffer Pool] shows that all of the buffers on the LRU list, flush list, and prepare list can be accessed using a hash table.
 
-![](media/Admin/Admin_eng.1.52.3.jpg)
+```{figure} media/Admin/Admin_eng.1.52.3.jpg
+:width: 720px
+:align: center
 
 [Figure 9-3] Buffer Pool 
+```
 
 ##### List Multiplexing
 
@@ -6872,9 +7063,12 @@ The buffer manager receives a page request, that includes information about the 
 
 When the buffer manager receives a request, it first checks the hash table for the BCB. If the requested page has already been loaded into a buffer, the BCB for that page will be found in the hash table. If the BCB cannot be found in the hash table, this means that the page has not been loaded into a buffer, and the page must be read from disk and loaded into a buffer.
 
-![](media/Admin/Admin_eng.1.53.1.jpg)
+```{figure} media/Admin/Admin_eng.1.53.1.jpg
+:width: 720px
+:align: center
 
 [Figure 9-4] Searching the Hash Table
+```
 
 ##### 2. Acquire a Lock
 
@@ -6935,9 +7129,12 @@ If buffers suitable for replacement are found, they are removed from the hash ta
 
 After a BCB has been acquired, a page is loaded from the disk to the buffer. However, a portion of the page on the disk may have been lost or corrupted due to some unforeseeable circumstances such as a hard disk error or a power failure. If such a problem goes unnoticed, users might be presented with invalid data, so it is important that the Altibase server be aware of such problems. Therefore the Altibase server checks the integrity of each page immediately after the page has been loaded from disk to the buffer. 
 
-![](media/Admin/9-5.png)
+```{figure} media/Admin/9-5.png
+:width: 720px
+:align: center
 
 [Figure 9-5] Verify the Page
+```
 
 #### Flushing
 
@@ -6970,9 +7167,12 @@ The reason for writing pages to disk twice in this way is that it is impossible 
 
 In Altibase, the directory in which the double write file is saved is specified using the DOUBLE_WRITE_DIRECTORY property. This file is used to verify the consistency of data files when the system is started and to perform system recovery. If this file doesn't exist, these tasks are not conducted.
 
-![](media/Admin/Admin_eng.1.53.3.jpg)
+```{figure} media/Admin/Admin_eng.1.53.3.jpg
+:width: 720px
+:align: center
 
 [Figure 9-6] Flushing Pages to Disk
+```
 
 ### Related Database Properties
 
@@ -7220,9 +7420,12 @@ If a data file is lost or corrupted, media recovery uses a snapshot of a previou
 
 Whether it is necessary to perform media recovery is determined by checking whether the version of the data file which is written in the log anchor file is the same as the version of the current data file. This is illustrated below:
 
-![](media/Admin/Admin_eng.1.58.1.jpg)
+```{figure} media/Admin/Admin_eng.1.58.1.jpg
+:width: 720px
+:align: center
 
 [Figure 10-1] The Altibase Recovery Process
+```
 
 Media recovery can be performed only during the control phase when starting up the database. That is, Alitibase only supports offline media recovery.
 
@@ -7560,8 +7763,9 @@ Database-Level Backup Completed [SUCCESS]
 
 Suppose that the database is operating in archivelog mode and that the data file $ALTIBASE_HOME/dbs/abc.dbf, which was not backed up, has been lost.
 
-> Note*: Data files in a memory tablespace cannot be recovered in this way.
->
+```{note}
+Data files in a memory tablespace cannot be recovered in this way.
+```
 
 ##### Recovery Procedure
 
@@ -7700,8 +7904,9 @@ iSQL(sysdba)> ALTER DATABASE RENAME DATAFILE
 '/disk2/dbs/USER_DISK_TBS02.dbf';
 ```
 
-> Note: The alter tablespace command can also be used to perform this task.
->
+```{note}
+The alter tablespace command can also be used to perform this task.
+```
 
 ```
 iSQL(sysdba)> ALTER TABLESPACE user_disk_tbs RENAME DATAFILE 
@@ -8089,7 +8294,9 @@ iSQL(sysdba)> ALTER DATABASE DISABLE INCREMENTAL CHUNK CHANGE TRACKING;
 
 This statement can be executed in all phases by the sysdba privilege. When tracking is disabled, the change tracking file is deleted from the $ALTIBASE_HOME/dbs directory.
 
-> Note*: Even if page change tracking is enabled, changed pages are not immediately tracked. The tracking of changed pages starts when a level 0 incremental backup is performed.
+```{note}
+Even if page change tracking is enabled, changed pages are not immediately tracked. The tracking of changed pages starts when a level 0 incremental backup is performed.
+```
 
 ##### changeTracking File
 
@@ -8097,11 +8304,10 @@ The information of changed pages is stored as bitmaps to the changeTracking file
 
 The changeTracking file is located in the $ALTIBASE_HOME/dbs directory.
 
-> Note*:
->
-> - If the changeTracking file is lost or invalid, the SYS user must recreate it by executing a SQL statement which enables changeTracking by the sysdba privilege. When the changeTracking file is recreated, accumulated information of changed pages that have been tracked disappears. Therefore, a level 0 incremental backup must precede a level 1 incremental backup.
-> - Change tracking can decrease Altibase server performance. If tracking is disabled in this case, server performance can be improved; however, an incremental backup cannot be performed. 
-> 
+```{note}
+- If the changeTracking file is lost or invalid, the SYS user must recreate it by executing a SQL statement which enables changeTracking by the sysdba privilege. When the changeTracking file is recreated, accumulated information of changed pages that have been tracked disappears. Therefore, a level 0 incremental backup must precede a level 1 incremental backup.
+- Change tracking can decrease Altibase server performance. If tracking is disabled in this case, server performance can be improved; however, an incremental backup cannot be performed. 
+```
 
 ##### backupInfo File
 
@@ -8111,7 +8317,9 @@ The backupInfo file provides information necessary for assessing the order of ba
 
 The backupInfo file is located in the $ALTIBASE_HOME/dbs directory.
 
-> Note*: Backup information is stored in chronological order of incremental backups to the backupInfo file. If the backupInfo file is lost, incremental backup files created theretofore can no longer be used. Consequently, the backupInfo file is automatically backed up when an incremental backup is performed.
+```{note}
+Backup information is stored in chronological order of incremental backups to the backupInfo file. If the backupInfo file is lost, incremental backup files created theretofore can no longer be used. Consequently, the backupInfo file is automatically backed up when an incremental backup is performed.
+```
 
 #### Examples of Incremental Backups
 
@@ -8125,8 +8333,9 @@ The Altibase server manages incremental backup files. Therefore, the following s
 iSQL(sysdba)> ALTER DATABASE CHANGE BACKUP DIRECTORY '/backup_dir';
 ```
 
-> Note*: This statement can only be executed when change tracking is enabled.
->
+```{note}
+This statement can only be executed when change tracking is enabled.
+```
 
 ##### Level 0 Incremental Backups
 
@@ -8218,7 +8427,9 @@ backupinfo
 
 ##### Level 1 Incremental Backups
 
-> Note*: A level 1 incremental backup requires only if the level 0 incremental backup has been performed before at least once.
+```{note}
+A level 1 incremental backup requires only if the level 0 incremental backup has been performed before at least once.
+```
 
 ###### 1 Incremental backups on databases
 
@@ -8346,7 +8557,9 @@ The application of archive logs to data files that are restored as backup files 
 iSQL(sysdba)> ALTER DATABASE RECOVER DATABASE;
 ```
 
-> Note*: Once a media recovery with incremental backup files is complete, a subsequent media recovery can be performed in the same manner as a media recovery with online full backup files, and the recovery steps are also the same.
+```{note}
+Once a media recovery with incremental backup files is complete, a subsequent media recovery can be performed in the same manner as a media recovery with online full backup files, and the recovery steps are also the same.
+```
 
 #### Recovery Steps with Incremental Backups
 
@@ -8939,8 +9152,9 @@ MODULE_NAME  MODULE_VERSION ECC_POLICY_NAME ECC_POLICY_CODE
 No rows selected.
 ```
 
-> Note*: The security module can be shut down only if there are no encrypted columns. 
->
+```{note}
+The security module can be shut down only if there are no encrypted columns. 
+```
 
 #### Column Encryption
 
@@ -9172,15 +9386,14 @@ iSQL> SELECT * from SYSTEM_.SYS_AUDIT_OPTS_;
 No rows selected.
 ```
 
-> #### Notes
->
-> Before starting auditing, it is recommended to initialize the SQL plan cache with the following statement.
-> 
->```
-> ALTER SYSTEM RESET SQL_PLAN_CACHE;
-> ```
-> 
->If the Altibase server uses the SQL plan cache, it is possible that some audit logs may not be written; since related information are not written to audit logs when a SQL execution plan, which is stored in the cache prior to auditing, is reused after auditing.
+```{note}
+Before starting auditing, it is recommended to initialize the SQL plan cache with the following statement.
+
+ALTER SYSTEM RESET SQL_PLAN_CACHE;
+
+If the Altibase server uses the SQL plan cache, it is possible that some audit logs may not be written; since related information are not written to audit logs when a SQL execution plan, which is stored in the cache prior to auditing, is reused after auditing.
+```
+
 
 ### Audit Condition Statements
 
@@ -9828,9 +10041,9 @@ DDL_OP : -/-
 1 row selected.
 ```
 
-> #### Note*:
->
-> Statement auditing is the auditing of the success or failure to EXECUTE a SQL statement; the success or failure to PREPARE a SQL statement is not an auditing target.
+```{note}
+Statement auditing is the auditing of the success or failure to EXECUTE a SQL statement; the success or failure to PREPARE a SQL statement is not an auditing target.
+```
 
 ### Viewing Auditing Results
 
@@ -10114,9 +10327,12 @@ The problems that are typically experienced can generally be thought of as falli
 
 The general troubleshooting procedure is as follows:
 
-![](media/Admin/Admin_eng.1.83.1.jpg)
+```{figure} media/Admin/Admin_eng.1.83.1.jpg
+:width: 720px
+:align: center
 
 [Figure 16-1] General Troubleshooting Procedure
+```
 
 The Altibase Administrator Logs are text logs that are created and maintained in the $ALTIBASE_HOME/trc/ directory with the ”*.log” filename extension. This directory contains the following trace log files:
 
