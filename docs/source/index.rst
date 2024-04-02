@@ -3,14 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Simple 7616-rtd Protytype
+Simple Altibase Manual Homepage Protytype for 7.3 English
 ====================================
 
-This is the first trial for the 7616-rtd.
+Welcome!
+This website provides docs for Altibase 7.3.
 
 Altibase Support Portal: http://support.altibase.com/en/
-
-고객 지원 센터: http://support.altibase.com/kr/
 
 .. toctree::
    :maxdepth: 2
@@ -55,7 +54,5 @@ User's Guide
 Developer's Guide
     Go to :doc:`Developer's Guide </dev/index>`.
 
-First time here?
+Search
 ----------------
-
-Hello

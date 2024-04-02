@@ -33,6 +33,7 @@ release = '0.0.1'
 extensions = [
     'sphinx_rtd_theme',
     'myst_parser',
+    'sphinx_search.extension',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -66,3 +67,5 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css',
 ]
+
+html_favicon = 'faviconV2.ico'
