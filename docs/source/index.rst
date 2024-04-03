@@ -35,28 +35,17 @@ Altibase Support Portal: http://support.altibase.com/en/
    Patch Notes </recent/Patch Notes/index>
    Release Notes </recent/Release Notes/index>
 
-
-
-
 .. meta::
-   :description lang=en: Automate building, versioning, and hosting of your technical documentation continuously on Read the Docs.
+   :description lang=en: Altibase manuals meta data trial sentence
 
 .. Adds a hidden link for the purpose of validating Read the Docs' Mastodon profile
 .. raw:: html
 
    <a style="display: none;" rel="me" href="https://fosstodon.org/@readthedocs">Mastodon</a>
 
-Random Strings Here
 
 User's Guide
     Go to :doc:`User's Guide </user/index>`.
 
 Developer's Guide
     Go to :doc:`Developer's Guide </dev/index>`.
-
-Indices
-----------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
