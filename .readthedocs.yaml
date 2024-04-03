@@ -4,9 +4,9 @@
 # Required
 version: 2
 
-# Build PDF & ePub
-formats:
-  - pdf
+search:
+  ranking:
+    docs/source/recent/*: -10
 
 # Set the OS, Python version and other tools you might need
 build:
@@ -27,8 +27,8 @@ sphinx:
   # fail_on_warning: true
 
 # Optionally build your docs in additional formats such as PDF and ePub
-# formats:
-#   - pdf
+formats:
+  - pdf
 #   - epub
 
 # Optional but recommended, declare the Python requirements required

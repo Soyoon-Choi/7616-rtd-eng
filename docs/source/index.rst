@@ -54,5 +54,9 @@ User's Guide
 Developer's Guide
     Go to :doc:`Developer's Guide </dev/index>`.
 
-Search
+Indices
 ----------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
