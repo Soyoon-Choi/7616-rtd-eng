@@ -52,7 +52,6 @@ Homepage                : <a href='http://www.altibase.com'>http://www.altibase.
   - [CheckServer API](#checkserver-api)
 
 
-
 ## Preface
 
 ## About This Manual
@@ -172,7 +171,6 @@ Include the following information:
 If you need immediate assistance regarding any errors, omissions, and other technical issues, please contact [Altibase's Support Portal](http://support.altibase.com/en/).
 
 Thank you. We always welcome your feedbacks and suggestions.
-
 
 
 ## 1.PHP Interface

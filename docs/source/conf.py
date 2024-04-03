@@ -69,3 +69,5 @@ html_css_files = [
 ]
 
 html_favicon = 'faviconV2.ico'
+
+suppress_warnings = ["myst.header"]

@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Simple Altibase Manual Homepage Protytype for 7.3 English
-====================================
+==============================================================
 
 Welcome!
 This website provides docs for Altibase 7.3.
@@ -17,6 +17,7 @@ Altibase Support Portal: http://support.altibase.com/en/
    :caption: User's Guide
 
    user/Administrator's Manual
+   user/Getting Started Guide
    user/General Reference-1.Data Types & Altibase Properties
    
 

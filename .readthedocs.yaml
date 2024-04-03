@@ -6,7 +6,8 @@ version: 2
 
 search:
   ranking:
-    docs/source/recent/*: 10
+    docs/source/recent/Patch Notes/*: -9
+    docs/source/recent/Release Notes/*: -10
 
 # Set the OS, Python version and other tools you might need
 build:

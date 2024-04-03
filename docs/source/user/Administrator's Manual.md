@@ -1,3 +1,7 @@
+---
+myst:
+  enable_extensions: [myst_heading_anchors = 3]
+---
 # Administrator’s Manual
 
 **Altibase 7.1**
@@ -282,7 +286,6 @@ If you need immediate assistance regarding any errors, omissions, and other tech
 Thank you. We always welcome your feedback and suggestions.
 
 ## 1. Introduction
--------------
 
 This chapter describes the background of the emergence of Hybrid DBMS. It also describes the structure and features of Altibase.
 
@@ -638,7 +641,6 @@ This file is the Altibase server environment configuration file, and contains al
 This file contains error messages related to the data storage management module, the query processor module, and the Altibase server main module, as well as those related to function execution and data type.
 
 ## 2. Altibase Components
------------------
 
 This chapter describes the major components of Altibase. After installing the Altibase package, the user can check out components such as the binary section and the programming library section.
 
@@ -976,8 +978,6 @@ The following are the components required when developing application programs u
 This is explained in detail in the *[Getting Started Guide](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.1/eng/Getting%20Started%20Guide.md)*.
 
 ## 3. Creating a Database
-
------------------
 
 After installing Altibase, the database administrator must create and manage the database by estimating the amount of user data generated. This chapter describes the main points to be aware of when creating a database.
 
@@ -5689,7 +5689,7 @@ However, there are some characteristics of partitioned tables that make them dif
 - Index Range 
   Indexes can be built for partitioned tables. In contrast, indexes can be built for the individual tables that make up union views, but not for the union views themselves.
 
-```{figure} (media/Admin/Admin_eng.1.42.1.jpg
+```{figure} media/Admin/Admin_eng.1.42.1.jpg
 :width: 720px
 :align: center
 
