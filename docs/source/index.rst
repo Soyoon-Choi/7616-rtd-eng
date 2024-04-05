@@ -17,8 +17,8 @@ Altibase Support Portal: http://support.altibase.com/en/
    :caption: User's Guide
 
    user/administrators-manual/0.-Administrators-Manual
-   user/Getting Started Guide
-   user/General Reference-1.Data Types & Altibase Properties
+   user/getting-started-guide/Getting Started Guide
+   user/General Reference-1.Data Types & Altibase Properties/General-Reference-1.Data-Types--Altibase-Properties
    
 
 .. toctree::
@@ -35,9 +35,6 @@ Altibase Support Portal: http://support.altibase.com/en/
 
    Patch Notes </recent/Patch Notes/index>
    Release Notes </recent/Release Notes/index>
-
-.. meta::
-   :description lang=en: Altibase manuals meta data trial sentence
 
 .. Adds a hidden link for the purpose of validating Read the Docs' Mastodon profile
 .. raw:: html

@@ -52,10 +52,12 @@ language = 'en'
 
 #MyST meta insertion extension
 myst_html_meta = {
-    "description lang=en": "Altibase",
-    "description lang=ko": "알티베이스의 메타 프로토타입 설명입니다",
-    "keywords": "Altibase, Altibase manual, Altibase 7.1, Altibase 7.3, DBMS, Database, 알티베이스, 알티베이스 매뉴얼, 알티베이스 가이드",
-    "property=og:locale":  "en_US"
+    "description lang=en": "Altibase Manuals",
+    "description lang=ko": "알티베이스 매뉴얼을 제공합니다",
+    "keywords lang=en": "Altibase, Altibase manual, Altibase 7.1, Altibase 7.3, DBMS, Database",
+    "keywords lang=ko": "알티베이스, 알티베이스 매뉴얼, 알티베이스 가이드, 알티베이스의 메타 프로토타입 키워드입니다",
+    "property=og:locale":  "en_US",
+    "property=og:locale:alternate ":"ko_KR"
 }
 
 # List of patterns, relative to source directory, that match files and
