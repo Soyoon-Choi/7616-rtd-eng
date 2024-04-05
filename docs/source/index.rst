@@ -12,11 +12,11 @@ This website provides docs for Altibase 7.3.
 Altibase Support Portal: http://support.altibase.com/en/
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: User's Guide
 
-   user/Administrator's Manual
+   user/administrators-manual/*
    user/Getting Started Guide
    user/General Reference-1.Data Types & Altibase Properties
    

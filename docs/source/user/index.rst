@@ -5,7 +5,7 @@ Start Altibase
 
 :doc:`Getting Started Guide </user/Getting Started Guide>`
 
-:doc:`Administrator's Manual </user/Administrator's Manual>`
+:doc:`Administrator's Manual </user/administrators-manual/0.-Administrators-Manual>`
 
 Reference
 

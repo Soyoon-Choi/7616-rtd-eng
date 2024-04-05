@@ -36,6 +36,10 @@ extensions = [
     'sphinx_search.extension',
 ]
 
+myst_enable_extensions = [
+    "deflist",
+]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -45,6 +49,14 @@ templates_path = ['_templates']
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = 'en'
+
+#MyST meta insertion extension
+myst_html_meta = {
+    "description lang=en": "Altibase",
+    "description lang=ko": "알티베이스",
+    "keywords": "Altibase, Altibase manual, Altibase 7.1, Altibase 7.3, DBMS, Database, 알티베이스, 알티베이스 매뉴얼, 알티베이스 가이드",
+    "property=og:locale":  "en_US"
+}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

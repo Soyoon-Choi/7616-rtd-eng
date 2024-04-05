@@ -1,7 +1,3 @@
----
-myst:
-  enable_extensions: [myst_heading_anchors = 3]
----
 # Administrator’s Manual
 
 **Altibase 7.1**
