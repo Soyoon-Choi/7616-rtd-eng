@@ -16,7 +16,7 @@ Altibase Support Portal: http://support.altibase.com/en/
    :hidden:
    :caption: User's Guide
 
-   user/administrators-manual/*
+   user/administrators-manual/0.-Administrators-Manual
    user/Getting Started Guide
    user/General Reference-1.Data Types & Altibase Properties
    

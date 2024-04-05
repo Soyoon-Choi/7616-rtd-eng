@@ -53,7 +53,7 @@ language = 'en'
 #MyST meta insertion extension
 myst_html_meta = {
     "description lang=en": "Altibase",
-    "description lang=ko": "알티베이스",
+    "description lang=ko": "알티베이스의 메타 프로토타입 설명입니다",
     "keywords": "Altibase, Altibase manual, Altibase 7.1, Altibase 7.3, DBMS, Database, 알티베이스, 알티베이스 매뉴얼, 알티베이스 가이드",
     "property=og:locale":  "en_US"
 }
