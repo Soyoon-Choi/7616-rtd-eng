@@ -6,8 +6,8 @@ Developer's Guide
    :caption: Developer's Guide
 
    dev/index
-   dev/API User's Manual
+   dev/API User's Manual/Application-Program-Interface-Users-Manual
 
 API reference
 
-:doc:`API User's Manual </dev/API User's Manual>`
+:doc:`API User's Manual </dev/API User's Manual/Application-Program-Interface-Users-Manual>`

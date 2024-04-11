@@ -1,3 +1,16 @@
-Recent
-======
-Can I make this in folder format or whatever more easy to read?
+Recent Updates index
+==========================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Recent Updates
+
+   Patch Notes/*
+   Relese Notes/*
+
+Recent News
+
+Go to
+   :doc:`Patch Notes/index`
+Go to
+   :doc:`Relese Notes/index`

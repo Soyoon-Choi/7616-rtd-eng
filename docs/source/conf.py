@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '7616-rtd'
+project = '7616-rtd-eng'
 copyright = '2024, Soyoon Choi'
 author = 'Soyoon Choi'
 
