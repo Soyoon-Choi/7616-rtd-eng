@@ -1,7 +1,7 @@
 Administrator’s Manual
 =======================================================
 
-**Altibase 7.1**
+**Altibase 7.3**
 
 Altibase® Administration
 
@@ -25,9 +25,9 @@ Customer Service Portal : http://support.altibase.com/en/
 Homepage :  http://www.altibase.com
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
    :caption: Administartor's Manual
+   :glob:
    
    Preface
    Table-Of-Contents

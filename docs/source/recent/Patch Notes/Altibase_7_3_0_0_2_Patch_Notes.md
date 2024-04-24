@@ -34,8 +34,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-New Features
-============
+## New Features
 
 ### BUG-50557<a name=bug-50557></a> Windows 환경에서의 BIGINT 배열 저장프로시저에 대한 long long 타입 지원
 
@@ -232,8 +231,7 @@ New Features
     -   Compile Option
     -   Error Code
 
-Fixed Bugs
-==========
+## Fixed Bugs
 
 ### BUG-49699<a name=bug-49699></a> Offline Adapter 수행 로그에 SPLIT, MERGE, DROP PARTITION의 DDL이 포함되어 있는 경우, BUILD OFFLINE META 명령이 실패합니다.
 
@@ -1037,8 +1035,7 @@ Fixed Bugs
     -   Compile Option
     -   Error Code
 
-Changes
-=======
+## Changes
 
 ### Version Info
 

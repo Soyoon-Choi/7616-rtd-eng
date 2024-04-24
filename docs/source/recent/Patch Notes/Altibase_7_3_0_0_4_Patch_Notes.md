@@ -20,8 +20,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-New Features
-============
+## New Features
 
 ### BUG-50695<a name=bug-50695></a> aku에서 6노드 지원
 
@@ -123,8 +122,7 @@ New Features
         -   수정전 : ERR-7101d(errno=0) Protocol header error.(TCP 127.0.0.1:41462)
         -   수정후 : ERR-710cc(errno=0) Protocol header error.(TCP 127.0.0.1:41462, 0, 3132333435363738393031323334353637383930)
 
-Fixed Bugs
-==========
+## Fixed Bugs
 
 ### BUG-50660<a name=bug-50660></a> REFERENCING NEW ROW절을 사용하는 트리거가 참조하 테이블의 테이블 스페이스를 변경 후 트리거 동작시, 서버가 비정상 종료하는 경우가 있어서 수정합니다.
 
@@ -361,8 +359,7 @@ Fixed Bugs
     -   Compile Option
     -   Error Code
 
-Changes
-=======
+## Changes
 
 ### Version Info
 

@@ -3,7 +3,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-# **Table of Contents** 
+## **Table of Contents** 
 
 - [New Features](#new-features)
   - [BUG-50654 로그 파일 준비 쓰레드(Log File Prepare Thread)의 병목현상 개선](#bug-50654)
@@ -26,8 +26,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-New Features
-============
+## New Features
 
 ### BUG-50654<a name=bug-50654></a> 로그 파일 준비 쓰레드(Log File Prepare Thread)의 병목현상 개선
 
@@ -81,8 +80,7 @@ New Features
     -   Compile Option
     -   Error Code
 
-Fixed Bugs
-==========
+## Fixed Bugs
 
 ### BUG-50527<a name=bug-50527></a> NVL_EQUAL(), NVL_NOT_EQUAL() 함수의 인자로 인덱스 컬럼에 대한 연산식을 적용할 경우 서버가 비정상 종료하는 경우가 있습니다.
 
@@ -482,8 +480,7 @@ Fixed Bugs
     -   Compile Option
     -   Error Code
 
-Changes
-=======
+## Changes
 
 ### Version Info
 

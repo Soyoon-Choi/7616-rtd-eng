@@ -1,6 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 - [Altibase 7.1.0.1.2 Release Notes](#altibase-71012-release-notes)
   - [System Requirements](#system-requirements)
     - [Minimum Hardware Requirements](#minimum-hardware-requirements)
@@ -10,8 +7,6 @@
     - [Changes](#changes)
     - [Packages](#packages)
     - [Download](#download)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Altibase 7.1.0.1.2 Release Notes
 

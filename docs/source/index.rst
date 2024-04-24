@@ -12,6 +12,15 @@ This website provides docs for Altibase 7.3.
 Altibase Support Portal: http://support.altibase.com/en/
 
 .. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Home
+
+   user/index
+   dev/index
+   recent/index
+
+.. toctree::
    :maxdepth: 3
    :hidden:
    :caption: User's Guide
@@ -22,11 +31,11 @@ Altibase Support Portal: http://support.altibase.com/en/
    
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: Developer's Guide
 
-   API User's Manual </dev/API User's Manual>
+   API User's Manual </dev/API User's Manual/Application-Program-Interface-Users-Manual>
 
 .. toctree::
    :maxdepth: 3
