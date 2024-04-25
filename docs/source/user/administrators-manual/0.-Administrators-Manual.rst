@@ -30,7 +30,6 @@ Homepage :  http://www.altibase.com
    :glob:
    
    Preface
-   Table-Of-Contents
    1.-Introduction
    2.-Altibase-Components
    3.-Creating-a-Database

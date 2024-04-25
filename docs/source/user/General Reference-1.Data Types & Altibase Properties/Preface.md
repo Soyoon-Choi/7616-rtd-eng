@@ -45,15 +45,15 @@ This manual describes command syntax using diagrams composed of the following el
 
 | Elements                                                   | Meaning                                                      |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| ![](../../media/GeneralReference/GeneralReference_eng.1.2.1.jpg) | Indicates the start of a command. If a syntactic element starts with an arrow, it is not a complete command. |
-| ![](../../media/GeneralReference/image006.gif)                   | Indicates that the command continues to the next line. if a syntactic element ends with this symbol, it is not a complete command. |
-| ![](../../media/GeneralReference/image008.gif)                   | Indicates that the command continues from the previous line. If a syntactic element starts with this symbol, it is not a complete command. |
-| ![](../../media/GeneralReference/image010.gif)                   | Indicates the end of a statement.                            |
-| ![](../../media/GeneralReference/image012.gif)                   | Indicates a mandatory element.                               |
-| ![](../../media/GeneralReference/image014.gif)                   | Indicates an optional element.                               |
-| ![](../../media/GeneralReference/image016.gif)                   | Indicates a mandatory element comprised of options. One, and only one, option must be specified. |
-| ![](../../media/GeneralReference/image018.gif)                   | Indicates an optional element comprised of options.          |
-| ![](../../media/GeneralReference/image020.gif)                   | Indicates an optional element in which multiple elements may be specified. A comma must precede all but the first element. |
+| ![](../media/GeneralReference/GeneralReference_eng.1.2.1.jpg) | Indicates the start of a command. If a syntactic element starts with an arrow, it is not a complete command. |
+| ![](../media/GeneralReference/image006.gif)                   | Indicates that the command continues to the next line. if a syntactic element ends with this symbol, it is not a complete command. |
+| ![](../media/GeneralReference/image008.gif)                   | Indicates that the command continues from the previous line. If a syntactic element starts with this symbol, it is not a complete command. |
+| ![](../media/GeneralReference/image010.gif)                   | Indicates the end of a statement.                            |
+| ![](../media/GeneralReference/image012.gif)                   | Indicates a mandatory element.                               |
+| ![](../media/GeneralReference/image014.gif)                   | Indicates an optional element.                               |
+| ![](../media/GeneralReference/image016.gif)                   | Indicates a mandatory element comprised of options. One, and only one, option must be specified. |
+| ![](../media/GeneralReference/image018.gif)                   | Indicates an optional element comprised of options.          |
+| ![](../media/GeneralReference/image020.gif)                   | Indicates an optional element in which multiple elements may be specified. A comma must precede all but the first element. |
 
 ##### Sample Code Conventions
 

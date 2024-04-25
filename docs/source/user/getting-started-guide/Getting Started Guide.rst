@@ -21,8 +21,7 @@ Homepage                : http://www.altibase.com
 <br>
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
    :caption: Getting Started Guide
    :glob:
    

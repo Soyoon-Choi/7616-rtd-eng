@@ -1,14 +1,10 @@
 General Reference-1.Data Types & Altibase Properties
-============================================
+===========================================================
 
 #### Altibase 7.1
 
 Altibase® Administration
 
-
-<div align="left">
-    <img src="media/common/e5cfb3761673686d093a3b00c062fe7a.png">
-</div>
 
 <pre>
 Altibase Administration General Reference
@@ -31,4 +27,6 @@ Homepage                : <a href='http://www.altibase.com'>http://www.altibase.
    :caption: General Reference-1.Data Types & Altibase Properties
    :glob:
 
-   General-Reference-1.Data-Types--Altibase-Properties/*
+   Preface
+   1.-Data-Types
+   2.-Altibase-Properties
