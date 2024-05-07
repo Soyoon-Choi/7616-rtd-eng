@@ -1,0 +1,31 @@
+Administrator’s Manual
+=======================================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Administartor's Manual
+   :glob:
+   
+   Preface
+   1.-Introduction
+   2.-Altibase-Components
+   3.-Creating-a-Database
+   4.-Startup-and-Shutdown
+   5.-Objects-and-Privileges
+   6.-Managing-Tablespaces
+   7.-Partitioned-Objects
+   8.-Managing-Transactions
+   9.-Database-Buffer-Manager
+   10.-Backup-and-Recovery
+   11.-Incremental-Backup-and-Recovery
+   12.-Communication-Layer
+   13.-Securing-Data
+   14.-Database-Auditing
+   15.-Tuning-Altibase
+   16.-DB-Diagnostic-Monitoring
+   Appendix-A.-Trace-Logs
+   Appendix-B.-Altibase-Limitations
+
+
+
+

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '7616-rtd'
+project = '7616-rtd-eng'
 copyright = '2024, Soyoon Choi'
 author = 'Soyoon Choi'
 
@@ -33,7 +33,14 @@ release = '0.0.1'
 extensions = [
     'sphinx_rtd_theme',
     'myst_parser',
+    'sphinx_search.extension',
 ]
+
+myst_enable_extensions = [
+    "deflist",
+]
+
+myst_heading_anchors = 7
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,6 +51,16 @@ templates_path = ['_templates']
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = 'en'
+
+#MyST meta insertion extension
+myst_html_meta = {
+    "description lang=en": "Altibase Manuals",
+    "description lang=ko": "알티베이스 매뉴얼을 제공합니다",
+    "keywords lang=en": "Altibase, Altibase manual, Altibase 7.1, Altibase 7.3, DBMS, Database",
+    "keywords lang=ko": "알티베이스, 알티베이스 매뉴얼, 알티베이스 가이드, 알티베이스의 메타 프로토타입 키워드입니다",
+    "property=og:locale":  "en_US",
+    "property=og:locale:alternate ":"ko_KR"
+}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -62,3 +79,11 @@ html_theme = "sphinx_rtd_theme"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_css_files = [
+    'custom.css',
+]
+
+html_favicon = 'faviconV2.ico'
+
+suppress_warnings = ["myst.header"]

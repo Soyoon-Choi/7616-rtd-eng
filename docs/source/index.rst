@@ -3,30 +3,39 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Simple 7616-rtd Protytype
-====================================
+Altibase Manual Homepage Prototype for 7.1 English Manual
+==============================================================
 
-This is the first trial for the 7616-rtd.
+Welcome!
+This website provides docs for Altibase 7.1.
 
 Altibase Support Portal: http://support.altibase.com/en/
 
-고객 지원 센터: http://support.altibase.com/kr/
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Home
+
+   user/index
+   dev/index
+   recent/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: User's Guide
 
-   user/Administrator's Manual
-   user/General Reference-1.Data Types & Altibase Properties
+   user/administrators-manual/0.-Administrators-Manual
+   user/getting-started-guide/Getting Started Guide
+   user/General Reference-1.Data Types & Altibase Properties/General-Reference-1.Data-Types--Altibase-Properties
    
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: Developer's Guide
 
-   API User's Manual </dev/API User's Manual>
+   API User's Manual </dev/API User's Manual/Application-Program-Interface-Users-Manual>
 
 .. toctree::
    :maxdepth: 3
@@ -36,26 +45,14 @@ Altibase Support Portal: http://support.altibase.com/en/
    Patch Notes </recent/Patch Notes/index>
    Release Notes </recent/Release Notes/index>
 
-
-
-
-.. meta::
-   :description lang=en: Automate building, versioning, and hosting of your technical documentation continuously on Read the Docs.
-
 .. Adds a hidden link for the purpose of validating Read the Docs' Mastodon profile
 .. raw:: html
 
    <a style="display: none;" rel="me" href="https://fosstodon.org/@readthedocs">Mastodon</a>
 
-Random Strings Here
 
 User's Guide
     Go to :doc:`User's Guide </user/index>`.
 
 Developer's Guide
     Go to :doc:`Developer's Guide </dev/index>`.
-
-First time here?
-----------------
-
-Hello
