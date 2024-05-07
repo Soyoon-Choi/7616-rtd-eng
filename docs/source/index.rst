@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Simple Altibase Manual Homepage Protytype for 7.3 English
+Altibase Manual Homepage Prototype for 7.3 English Manual
 ==============================================================
 
 Welcome!
