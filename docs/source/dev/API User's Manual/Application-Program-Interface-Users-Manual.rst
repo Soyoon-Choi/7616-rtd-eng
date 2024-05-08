@@ -3,6 +3,8 @@ Application Program Interface User’s Manual
 
 **Altibase 7.3**
 
+:download:`Download API User's Manual <../pdf/API User's Manual.pdf>`
+
 .. toctree::
    :maxdepth: 2
    :caption: Table of Contents
