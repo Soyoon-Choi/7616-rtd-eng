@@ -1,3 +1,4 @@
 sphinx-rtd-theme
 myst-parser
 readthedocs-sphinx-search
+sphinx-design
