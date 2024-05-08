@@ -34,6 +34,7 @@ extensions = [
     'sphinx_rtd_theme',
     'myst_parser',
     'sphinx_search.extension',
+    "sphinx_design",
 ]
 
 myst_enable_extensions = [
