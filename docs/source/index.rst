@@ -18,27 +18,51 @@ Altibase Support Portal: http://support.altibase.com/en/
 
    user/index
    dev/index
+   tool/index
+   3rd/index
+   compatibility/index
    recent/index
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :hidden:
    :caption: User's Guide
 
-   user/administrators-manual/0.-Administrators-Manual
-   user/getting-started-guide/Getting Started Guide
-   user/General Reference-1.Data Types & Altibase Properties/General-Reference-1.Data-Types--Altibase-Properties
-   
+   user/index-start-altibase
+   user/index-use-altibase
+   user/index-reference
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :hidden:
    :caption: Developer's Guide
 
-   API User's Manual </dev/API User's Manual/Application-Program-Interface-Users-Manual>
+   dev/index-application-dev
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
+   :hidden:
+   :caption: Tools Manual
+
+   tool/index-version-dependent
+   tool/index-tools
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: 3rd Party Guide
+
+   3rd/index
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :caption: Compatibility Guide
+
+   compatibility/index
+
+.. toctree::
+   :maxdepth: 1
    :hidden:
    :caption: Recent Updates
 
@@ -56,3 +80,12 @@ User's Guide
 
 Developer's Guide
     Go to :doc:`Developer's Guide </dev/index>`.
+
+How to Use Tools
+    Go to :doc:`Tools Manual </tool/index>`.
+
+3rd Party Guide for Altibase
+    Go to :doc:`3rd Party Guide for Altibase </3rd/index>`.
+
+Compatibility Guide
+    Go to :doc:`Compatibility Guide </compatibility/index>`.

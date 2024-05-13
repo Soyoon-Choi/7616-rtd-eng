@@ -1,11 +1,13 @@
 Administrator’s Manual
 =======================================================
 
+**Altibase 7.3**
+
 :download:`Download Administrator's Manual <../pdf/Administrator’s Manual.pdf>`
 
 .. toctree::
    :maxdepth: 2
-   :caption: Administartor's Manual
+   :caption: Table of Contents
    :glob:
    
    Preface

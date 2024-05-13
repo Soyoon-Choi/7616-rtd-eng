@@ -86,6 +86,20 @@ html_css_files = [
     'custom.css',
 ]
 
+html_theme_options = {
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 5,
+    'includehidden': True,
+    'titles_only': False
+}
+
 html_favicon = 'faviconV2.ico'
 
 suppress_warnings = ["myst.header"]

@@ -1,4 +1,4 @@
-Recent Updates index
+Recent Updates
 ==========================
 
 Patch Notes
