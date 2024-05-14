@@ -122,11 +122,11 @@ An anonymous block is a form of a stored procedure composed of a body block with
 
 ##### Internal Mode in C/C++ External Procedure
 
-The internal mode procedure operates faster compared to the external mode by directly loading dynamic libraries and invoking external procedures from the Altibase server without agent processes, resulting in improved efficiency. For more details, refer to [**External Procedures Manual**](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.3/eng/External%20Procedures%20Manual.md).
+The internal mode procedure operates faster compared to the external mode by directly loading dynamic libraries and invoking external procedures from the Altibase server without agent processes, resulting in improved efficiency. For more details, refer to [**External Procedures Manual**](../../dev/External%20Procedures%20Manual/Preface.md).
 
 ##### Multiple Delete, Update
 
-Provides support for multiple delete and multiple update statements. Refer to [**SQL Reference Manual** - multiple_delete](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.3/eng/SQL%20Reference.md#multiple_delete), [multiple_update](https://github.com/ALTIBASE/Documents/blob/master/Manuals/Altibase_7.3/eng/SQL%20Reference.md#multiple_update).
+Provides support for multiple delete and multiple update statements. Refer to [**SQL Reference Manual** - multiple_delete](../../dev/SQL%20Reference/4.-Data-Manipulation-Language.md#mutiple_delete), [multiple_update](../../dev/SQL%20Reference/4.-Data-Manipulation-Language.md#multiple_update).
 
 ##### Regular Expression for Korean Searching
 
