@@ -24,19 +24,20 @@ It is recommended for those reading this manual possess the following background
 
 This manual has been organized as follows:
 
--   Chapter 1: Introduction  
-    This chapter provides an overview of Altibase replication
+Chapter 1: Introduction
+: This chapter provides an overview of Altibase replication
 
--   Chapter 2: Managing Replication  
-    This chapter explains how to manage Altibase replication.
+Chapter 2: Managing Replication  
+: This chapter explains how to manage Altibase replication.
 
--   Chapter 3: Deploying Replication  
-    This chapter explains how to deploy Altibase replication.
+Chapter 3: Deploying Replication  
+: This chapter explains how to deploy Altibase replication.
 
--   Chapter 4: Fail-Over  
-    This chapter explains the Fail-Over feature provided by Altibase and how to use it.
+Chapter 4: Fail-Over  
+: This chapter explains the Fail-Over feature provided by Altibase and how to use it.
 
--   Appendix A. FAQ
+Appendix A. FAQ
+: This appendix includes FAQs related to the replication.
 
 #### Documentation Conventions
 
