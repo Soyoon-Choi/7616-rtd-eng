@@ -16,6 +16,6 @@ Use Altibase
 
 Reference
 
-- :doc:`General Reference </user/General Reference-1.Data Types & Altibase Properties/General-Reference-1.Data-Types--Altibase-Properties>`
-- :doc:`General Reference </user/General Reference-2.The Data Dictionary/General-Reference-2.The-Data-Dictionary>`
+- :doc:`General Reference-1.Data Types & Altibase Properties </user/General Reference-1.Data Types & Altibase Properties/General-Reference-1.Data-Types--Altibase-Properties>`
+- :doc:`General Reference-2.The Data Dictionary </user/General Reference-2.The Data Dictionary/General-Reference-2.The-Data-Dictionary>`
 - :doc:`Error Message Reference </user/Error Message Reference/Error-Message-Reference>`
