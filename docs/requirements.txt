@@ -3,3 +3,4 @@ myst-parser
 readthedocs-sphinx-search
 sphinx-design
 sphinx-notfound-page
+sphinx-togglebutton
