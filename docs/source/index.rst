@@ -57,16 +57,8 @@ Altibase Support Portal: http://support.altibase.com/en/
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: Compatibility Guide
-
-   compatibility/index
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
    :caption: Recent Updates
 
-   Patch Notes </recent/Patch Notes/index>
    Release Notes </recent/Release Notes/index>
 
 .. Adds a hidden link for the purpose of validating Read the Docs' Mastodon profile
@@ -86,6 +78,3 @@ How to Use Tools
 
 3rd Party Guide for Altibase
     Go to :doc:`3rd Party Guide for Altibase </3rd/index>`.
-
-Compatibility Guide
-    Go to :doc:`Compatibility Guide </compatibility/index>`.
